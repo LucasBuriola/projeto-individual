@@ -46,91 +46,26 @@ a {
     color: #0313f8;
 }
 
-/* fim do header */
-
-/*começo do banner*/
-
-.banner {
-    background-size: cover;
-    background-image:url(../imagem/academia-1024x683.webp);
-    width:100%;
-    height: 300px;
-    border-bottom: solid rgb(24, 4, 207)3px;
+.ganho{
+    border-bottom: black solid 3px;
 }
 
-.banner .container {
-    
-    justify-content:  center;
-    align-items: center;
-    height: 90%;
-    width: 90%;
-
+.inicio{
+    border-bottom: black solid 3px;
 }
 
-.card{
-    background-color: #cdcdcd9c;
-    padding-left: 20px;
-    border-radius: 5px;
-    border: solid 3px rgb(255, 250, 250);
-    
+.alimentação{
+    border-bottom: black solid 3px;
 }
 
-.banner .container p {
-    color: rgb(27, 2, 255);
-    font-size: 25px;
-    width: 200px;
-    
-    
-
-} 
-
-.banner .container p span {
-    font-weight: 1000;
-
-}
-
-/* fim do banner*/
-
-/* começo do social*/
-
-.social {
-    background-color: #000000;
-    border-bottom: #0313f8 solid 3px;
-}
-
-.card img {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(240, 248, 255, 0.473);
-    
-}
-
-.social .container {
-    justify-content: space-between;
-
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-
-}
-
-.card h4 {
-    color: #000000;
-}
-
-.card p {
-    /* text-align: center;*/
-    width: 100px;
+p{
+    text-align: justify;
 }
 
 .rodaPé {
     background-position: start;
     display: flex;
-         height: 100;
+         height: 100%;
         width: 100%;
         background-color: black;
         color:  rgb(227, 227, 230);
