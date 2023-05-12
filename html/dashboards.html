@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="logo">Strength of motivation</h1>
+            <ul class="navBar">
+                <li><a href="home.html" >Inicio</a></li>
+                <li><a href="treino.html">Treino</a></li>
+                <li><a href="alimentação.html">alimentação</a> </li>
+                <li><a href="">Simulador</a></li>
+                <li>|</li>
+                <li> <a href="login.html">Login </a></li>
+                <li> <a href="cadastro.html">Cadastro </a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+        <div>
+            <canvas id="myChart"></canvas>
+          </div>
+          
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+        
+    </div>
+    <div class="rodaPé">
+
+        <h4></h4>
+
+        <ul class="bula">
+            <li><a href="home.html" class="roda">Home</a></li>
+            <li><a href="treino.html" class="roda">Treino</a></li>
+            <li><a href="alimentação.html" class="roda">Alimentação</a></li>
+            <li><a href="cadastro.html" class="roda">Cadastro</a></li>
+            <li><a href="login.html" class="roda">Login</a></li>
+        </ul>
+
+        <ul class="bula">
+            <button onclick="descriçao()" class="botãoroda">Descrição</button>
+            <div id="div_desc"></div>
+            <button onclick="contato()" class="botãoroda">Contato</button>
+            <div id="div_Contato"></div>
+
+
+        </ul>
+
+        <ul class="bula">
+            <li class="roda">Redes Sociais</li>
+            <li><a href="https://www.instagram.com/techf_ish/" class="roda">Instagram</a></li>
+
+        </ul>
+
+
+
+    </div>
+
+    
+            
+
+
+
+    
+</body>
+</html>
+
+
+<script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Perna', 'Bíceps', 'Peito', 'costas', 'triceps', 'Ombro','Antebraço'],
+        datasets: [{
+          label: 'Preferencia de Musculos',
+          data: [12, 19, 3, 5, 2, 3, 2],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
