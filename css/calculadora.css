@@ -61,3 +61,37 @@ a {
     margin: auto;
     
 }
+
+.Calorias{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #0313f863;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 15px;
+        border: #161515 4px solid;
+        border-radius: 30px;
+        width: 50%;
+        margin: auto;
+        
+
+}
+
+.montar_treino{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0313f863;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 15px;
+    border: #161515 4px solid;
+    border-radius: 30px;
+    width: 50%;
+    margin: auto;
+    
+
+}
