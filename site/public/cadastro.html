@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <script src="js/funcoes.js"></script>
    
 </head>
 
@@ -16,10 +17,10 @@
         <div class="container">
             <h1 class="logo">Strength of motivation</h1>
             <ul class="navBar">
-                <li><a href="home.html" >Inicio</a></li>
+                <li><a href="index.html" >Inicio</a></li>
                 <li><a href="treino.html">Treino</a></li>
                 <li><a href="alimentação.html">alimentação</a> </li>
-                <li><a href="">Simulador</a></li>
+                <li><a href="calculadora.html">Simulador</a></li>
                 <li>|</li>
                 <li> <a href="login.html">Login </a></li>
                 <li> <a href="cadastro.html">Cadastro </a></li>
@@ -33,25 +34,6 @@
             <div class="input">
                 <input id="nome_usuario" name="nome_usurio" type="text">
                 <br>
-                <br>
-                <label for="grupo_muscular">Grupo muscular objetivo</label>
-                <br>
-                <select name="musculo" id="grupo_muscular">
-                    <option value="tríceps" >Todos</option>
-                    <option value="costas" >Costas</option>
-                    <option value="peito" >Peito</option>
-                    <option value="ombro" >Ombro</option>
-                    <option value="bíceps" >Bíceps</option>
-                    <option value="tríceps" >Tríceps</option>
-                    <option value="antebraço" >Antebraço</option>
-                    <option value="perna" >Perna</option>
-                </select>
-                <br>
-                <br>
-                <label for="Telefone">Telefone</label>
-                <div class="input">
-                    <input id="Telefone" name="Telefone" type="number">
-                </div>
                 <br>
                 <label for="Email">Email</label>
                 <div class="input">
@@ -80,8 +62,8 @@
 
         <h4></h4>
         <ul class="bula">
-            <li><a href="home.html" class="roda">Home</a></li>
-            <li><a href="Simulador.html" class="roda">Simulador</a></li>
+            <li><a href="index.html" class="roda">Home</a></li>
+            <li><a href="calculadora.html" class="roda">Simulador</a></li>
             <li><a href="Cadastro.html" class="roda">Cadastro</a></li>
             <li><a href="login.html" class="roda">Login</a></li>
         </ul>
@@ -116,44 +98,61 @@
 
     function Cadastrar() {
 
-        var email = Email.value
-        var senha = Senha.value
-        var confirmar_senha = Senha2.value
+        var nomeVar = nome_usuario.value
+        var emailVar = Email.value
+        var senhaVar = Senha.value
+        var confirmacaoSenhaVar = Senha2.value
 
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-
-        if (email.indexOf('@') < 0 || email.indexOf('.com') < 0) {
-
-            div_validacao.innerHTML = `Email invalido <br><br>`
-
-        } else if (senha.length < 7) {
-
-            div_validacao.innerHTML = `A senha tem que ter no mínino 7 caracteres`
-
-        } else if (confirmar_senha != senha) {
-
-            div_validacao.innerHTML = `Senha incompativel`
-
-
-        } else {
-            div_validacao.innerHTML = ``
-            setTimeout(() => {
-                window.location = "login.html";
-            }, "0000")
-
-
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
         }
 
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
 
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert('cadastro concluido com sucesso ')
+                window.location = "login.html";
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
     }
 
-    function descriçao() {
-        div_desc.innerHTML = ''
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 
-    function contato() {
-        div_Contato.innerHTML = `Email: Strengthofmotivation@gmail.com <br> telefone: (11) 990018923 `
-    }
+
 
 
 

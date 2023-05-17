@@ -12,24 +12,26 @@
         <div class="container">
             <h1 class="logo">Strength of motivation</h1>
             <ul class="navBar">
-                <li><a href="home.html" >Inicio</a></li>
-                <li><a href="treino.html">Treino</a></li>
-                <li><a href="alimentação.html">alimentação</a> </li>
-                <li><a href="calculadora.html">Simulador</a></li>
+                <li><a href="../index.html" >Inicio</a></li>
+                <li><a href="../treino.html">Treino</a></li>
+                <li><a href="../alimentação.html">alimentação</a> </li>
+                <li><a href="../calculadora.html">Simulador</a></li>
                 <li>|</li>
-                <li> <a href="login.html">Login </a></li>
-                <li> <a href="cadastro.html">Cadastro </a></li>
+                <li> <a href="../login.html">Login </a></li>
+                <li> <a href="../cadastro.html">Cadastro </a></li>
             </ul>
         </div>
     </div>
 
 
-
-        <div>
+      <div class="tela" >
+        <div class="cor" >
+        <div  class="grafico" >
             <canvas id="myChart"></canvas>
           </div>
-          
+        </div>
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </div>
 
 
         
@@ -73,7 +75,7 @@
     const ctx = document.getElementById('myChart');
   
     new Chart(ctx, {
-      type: 'bar',
+      type: 'pie',
       data: {
         labels: ['Perna', 'Bíceps', 'Peito', 'costas', 'triceps', 'Ombro','Antebraço'],
         datasets: [{
