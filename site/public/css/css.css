@@ -6,7 +6,7 @@
 
 
 body {
-    margin:0;
+    margin: 0;
 }
 
 .container {
@@ -19,10 +19,10 @@ body {
     width: 100%;
     background-color: black;
     border-bottom: solid rgb(3, 38, 194) 3px;
-    
+
 }
 
-.header .container{
+.header .container {
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -33,7 +33,7 @@ body {
 }
 
 .navBar {
-    width: 50%;  
+    width: 50%;
     display: flex;
     color: #2612d8;
     list-style: none;
@@ -52,37 +52,38 @@ a {
 
 .banner {
     background-size: cover;
-    background-image:url(../imagem/academia-1024x683.webp);
-    width:100%;
+    background-image: linear-gradient(to bottom, transparent 0%, #040553 120% ), url(../imagem/academia-1024x683.webp);
+    width: 100%;
     height: 300px;
-    border-bottom: solid rgb(24, 4, 207)3px;
+
 }
 
 .banner .container {
-    
-    justify-content:  center;
+
+    justify-content: center;
     align-items: center;
     height: 90%;
     width: 90%;
+    color: white;
 
 }
 
-.card{
-    background-color: #cdcdcd9c;
+.card {
+    background-color: #000000af;
     padding-left: 20px;
-    border-radius: 5px;
-    border: solid 3px rgb(255, 250, 250);
-    
+    color : white
+
+
 }
 
 .banner .container p {
     color: rgb(27, 2, 255);
     font-size: 25px;
     width: 200px;
-    
-    
 
-} 
+
+
+}
 
 .banner .container p span {
     font-weight: 1000;
@@ -102,7 +103,7 @@ a {
     width: 100px;
     height: 100px;
     background-color: rgba(240, 248, 255, 0.473);
-    
+
 }
 
 .social .container {
@@ -123,29 +124,31 @@ a {
 }
 
 .card p {
-    /* text-align: center;*/
+    /* text-align: center; */
     width: 100px;
+    display: contents;
+    justify-content: end;
 }
 
 .rodaPé {
     background-position: start;
     display: flex;
-         height: 100;
-        width: 100%;
-        background-color: black;
-        color:  rgb(227, 227, 230);
-        text-align: center;
-        justify-content: space-evenly;
+    height: 100;
+    width: 100%;
+    background-color: black;
+    color: rgb(227, 227, 230);
+    text-align: center;
+    justify-content: space-evenly;
 }
 
-.rodaPé h4{
-    text-align: center; 
+.rodaPé h4 {
+    text-align: center;
 
 }
 
 
-  
-  
+
+
 .hjk {
     display: flex;
     align-items: center;
@@ -153,26 +156,26 @@ a {
     flex-direction: column;
     height: 100px;
     margin: 0;
-    
-  }
 
-  .roda {
+}
+
+.roda {
     width: 100px;
     display: flex;
-    color: rgb(19, 2, 168) ;
+    color: rgb(19, 2, 168);
     list-style: none;
-    
-  }
+
+}
 
 
-    .botãoroda {
-        background-color: black;
-        display: flex;
-        color: #250cb3;
-        border: none;
-        width: 400px;
-        text-align: center;
-        
+.botãoroda {
+    background-color: black;
+    display: flex;
+    color: #250cb3;
+    border: none;
+    width: 400px;
+    text-align: center;
 
 
-        }
+
+}
