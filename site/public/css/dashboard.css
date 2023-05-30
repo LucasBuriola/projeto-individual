@@ -107,7 +107,6 @@ a {
         text-align: center;
         
 
-
         }
 
         hr{
@@ -116,31 +115,41 @@ a {
             display: flex;
             margin-left: -50px;
             width: 1399px;
-            
         
         }
 
         .grafico{
             display: flex;
-            width: 500px;
-            justify-content: center;
-        
-            
-           
+            width: 50%;        
+            margin-left: 400px;   
         }
 
         .tela{
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: end;
-            background-color: #5c49ff6c;
+            background-color: #fdfa68a1;
             width: 100%;
+            align-items: start;
+            justify-content: end;
+            
 
         }
 
         .cor{
-            background-color: #000000ea;
+            background-color: #aba6f798;
             border-radius: 10px;
+            width: 60%;
+            margin-left: -20px;
     
         }
+
+        .selecione{
+         margin-left: -555px;
+         border-radius: 10PX;
+            }
+
+        #myChart{                width: 50vh;
+                width: 50vw;
+                height: 50vh;
+                height: 50vw;
+
+          }

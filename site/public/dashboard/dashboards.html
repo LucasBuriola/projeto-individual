@@ -25,55 +25,50 @@
 
 
       <div class="tela" >
+        <div class="escolha" >
+          <div class="selecione" >
+            Qual musculo voce deseja focar :<br> <br>
+            
+            biceps<input type="checkbox" id="input_biceps">
+            perna<input type="checkbox" id="input_perna">
+            peito<input type="checkbox" id="input_peito">
+            triceps<input type="checkbox" id="input_triceps">
+            Ombro<input type="checkbox" id="input_ombro">
+            Antebraço<input type="checkbox" id="input_antebraco">
+            Costas<input type="checkbox" id="input_costas">
+            <br>
+            <br>
+            <button onclick="enviar()" >Enviar</button>
+          </div>
+        </div>
         <div class="cor" >
         <div  class="grafico" >
             <canvas id="myChart"></canvas>
           </div>
         </div>
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        </div>
 
-
-        
-    </div>
-    <div class="rodaPé">
-
-        <h4></h4>
-
-        <ul class="bula">
-            <li><a href="home.html" class="roda">Home</a></li>
-            <li><a href="treino.html" class="roda">Treino</a></li>
-            <li><a href="alimentação.html" class="roda">Alimentação</a></li>
-            <li><a href="cadastro.html" class="roda">Cadastro</a></li>
-            <li><a href="login.html" class="roda">Login</a></li>
-        </ul>
-
-        <ul class="bula">
-            <button onclick="descriçao()" class="botãoroda">Descrição</button>
-            <div id="div_desc"></div>
-            <button onclick="contato()" class="botãoroda">Contato</button>
-            <div id="div_Contato"></div>
-
-
-        </ul>
-
-        <ul class="bula">
-            <li class="roda">Redes Sociais</li>
-            <li><a href="https://www.instagram.com/techf_ish/" class="roda">Instagram</a></li>
-
-        </ul>
-
-
-
-    </div>
     
 </body>
 </html>
 
-
 <script>
+
+  var perna = 0
+  var biceps= 0
+  var peito = 0
+  var triceps = 0
+
+  function cadastrar(){
+    var biceps = input_biceps.value
+    var perna = input_perna.value
+
+
+  }
+
     const ctx = document.getElementById('myChart');
   
+    
     new Chart(ctx, {
       type: 'pie',
       data: {

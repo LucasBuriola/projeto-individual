@@ -100,9 +100,10 @@ a {
 }
 
 .card img {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(240, 248, 255, 0.473);
+    width: 200px;
+    height: 200px;
+    background-color: rgba(176, 190, 190, 0.473);
+    flex-direction: column;
 
 }
 
@@ -120,11 +121,12 @@ a {
 }
 
 .card h4 {
-    color: #000000;
+    color: #fffcfc;
+
 }
 
 .card p {
-    /* text-align: center; */
+    text-align: center;
     width: 100px;
     display: contents;
     justify-content: end;
@@ -179,3 +181,5 @@ a {
 
 
 }
+
+    
