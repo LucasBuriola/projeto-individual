@@ -38,8 +38,14 @@
             Costas<input type="checkbox" id="input_costas">
             <br>
             <br>
-            <button onclick="enviar()" >Enviar</button>
-          </div>
+            <button onclick="cadastrar()">
+                Cadastrar
+            </button>
+            <button onclick="mostrar()" >Ver Grafico</button>
+            <button onclick="limpar()">
+              limpar
+            </button>
+            </div>
         </div>
         <div class="cor" >
         <div  class="grafico" >
@@ -58,24 +64,21 @@
   var biceps= 0
   var peito = 0
   var triceps = 0
+  var Ombro = 0 
+  var Antebraço = 0
+  var costas = 0
 
-  function cadastrar(){
-    var biceps = input_biceps.value
-    var perna = input_perna.value
 
-
-  }
-
+  function mostrar(){
     const ctx = document.getElementById('myChart');
-  
-    
+
     new Chart(ctx, {
       type: 'pie',
       data: {
         labels: ['Perna', 'Bíceps', 'Peito', 'costas', 'triceps', 'Ombro','Antebraço'],
         datasets: [{
           label: 'Preferencia de Musculos',
-          data: [12, 19, 20, 5, 2, 3, 2],
+          data: [perna, biceps, peito, costas, triceps, Ombro, Antebraço ],
           borderWidth: 1
         }]
       },
@@ -87,4 +90,48 @@
         }
       }
     });
+  }
+
+  function cadastrar() {
+        alert(`
+        Voto Registrado
+        `)
+
+        if (input_peito.checked == true) {
+            input_peito.checked = false;
+
+            peito++;
+        } else if (input_ombro.checked == true) {
+            input_ombro.checked = false;
+
+            ombro++;
+        } else if (input_triceps.checked == true) {
+            input_triceps.checked = false;
+
+            triceps++;
+        } else if (input_costas.checked == true) {
+            input_costas.checked = false;
+
+            costas++;
+        } else if (input_biceps.checked == true) {
+            input_biceps.checked = false;
+
+            biceps++;
+        } else if (input_perna.checked == true) {
+            input_perna.checked = false;
+
+            perna++;
+        } else if (input_antebraco.checked == true) {
+            input_antebraco.checked = false; 
+
+            Antebraço++;
+    } 
+    
+    function limpar(){
+      myChart.innerHTML = ``
+    }
+
+  }
+
+
   </script>
