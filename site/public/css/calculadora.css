@@ -95,3 +95,62 @@ a {
     
 
 }
+.cor{
+
+    background-color: rgba(158, 217, 252, 0.897);
+}
+
+.rodaPé {
+    background-position: start;
+    display: flex;
+         height: 100%;
+        width: 100%;
+        background-color: black;
+        color:  rgb(227, 227, 230);
+        text-align: center;
+        justify-content: space-evenly;
+}
+
+.rodaPé h4{
+    text-align: center; 
+
+}
+
+
+  
+  
+.hjk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    margin: 0;
+    
+  }
+
+  .roda {
+    width: 100px;
+    display: flex;
+    color: rgb(19, 2, 168) ;
+    list-style: none;
+    
+  }
+
+
+    .botãoroda {
+        background-color: black;
+        display: flex;
+        color: #250cb3;
+        border: none;
+        width: 400px;
+        text-align: center;
+        
+
+
+        }
+
+        button{
+            background-color: #757a92;
+            border-radius: 20px;
+        }
