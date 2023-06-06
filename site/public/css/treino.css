@@ -97,16 +97,32 @@ a {
 
         .peito{
             border-bottom: black solid 3px;
+            border-left: black solid 3px;
+            border-right: black solid 3px;
+            border-top: black solid 3px;
             
         }
 
         .braco{
             border-bottom: black solid 3px;
+            border-left: black solid 3px;
+            border-right: black solid 3px;
+            border-top: black solid 3px;
 
         }
 
         .costas{
             border-bottom: black solid 3px;
+            border-left: black solid 3px;
+            border-right: black solid 3px;
+            border-top: black solid 3px;
+        }
+
+        .perna{
+            border-bottom: black solid 3px;
+            border-left: black solid 3px;
+            border-right: black solid 3px;
+            border-top: black solid 3px;
         }
 
         p{

@@ -26,6 +26,8 @@
         </div>
     </div>
 <div class="cor">
+    <br>
+    <br>
     <div class="calculadora">
         <h2>Calcular IMC</h2>
         <label>Insira seu Peso (em kg) :</label>
@@ -64,8 +66,23 @@
         <div id="resultado3"></div>
 
     </div>
-    
+    <br>
+    <br>
+    <div class="sorteio">
+        <div class="sortear">
+            Vamos sortear um treino para voce fazer !
+            <br>
+            <br>
+            <button onclick="sortear()" >Sortear treino </button>
+            <br>
+            <br>
+            <div id="resultado4"></div>
+        </div>
+        </div>
+        <br>
+        <br>
 </div>
+
 <div class="rodaPé">
 
     <h4></h4>
@@ -93,10 +110,30 @@
     </ul>
 </div>
 
+
 </body>
 
 
     <script>
+        var lista = [
+        '<img style="height: 150px;" src=".//imagem/supino.jpg">',
+        '<img style="height: 150px;" src="./imagem/biceps2.jpg">',
+        '<img style="height: 150px;" src="./imagem/perna.jpg">',
+        '<img style="height: 150px;" src="./imagem/costas1.jpg">'
+
+    ]
+
+    function sortear(){
+
+        var limite = lista.length -1 
+
+        var aleatorio =  Math.random() * limite
+        var formatar = aleatorio.toFixed()
+
+       resultado4.innerHTML = lista[formatar]
+
+    }
+
         function calcular() {
             var peso = Number(input_peso.value);
             var altura = Number(input_tamanho.value);

@@ -38,5 +38,3 @@ CREATE TABLE musculo (
 	ombro VARCHAR(45)
 );
 
-
-select * from usuario; 	
