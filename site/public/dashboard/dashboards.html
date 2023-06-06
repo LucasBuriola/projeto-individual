@@ -28,7 +28,7 @@
         <div class="escolha" >
           <div class="selecione" >
             <br>
-            Qual musculo voce deseja focar :<br> <br>
+            Qual musculo voce deseja focar nos primeiros 6 meses :<br> <br>
             
             Biceps<input type="checkbox" id="input_biceps">
             Perna<input type="checkbox" id="input_perna">
@@ -47,15 +47,18 @@
            
             </div>
         </div>
+        
         <div class="cor" >
+          <br>
         <div  class="grafico" >
             <canvas id="myChart"></canvas>
           </div>
+          <br>
         </div>
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
          </div>
+         
          </body>
           <div class="rodaPé">
 
@@ -70,9 +73,9 @@
             <ul class="bula">
                 <li class="roda">Sobre nós</li>
                 <button onclick="descriçao()" class="botãoroda">Descrição</button>
-                <div id="div_desc"></div>
+                <div id="resultadodesc"></div>
                 <button onclick="contato()" class="botãoroda">Contato</button>
-                <div id="div_Contato"></div>
+                <div id="resultadocontato"></div>
     
     
             </ul>
@@ -162,6 +165,15 @@
       myChart.innerHTML = ``
     }
 
+  }
+
+  function descriçao(){
+    resultadodesc.innerHTML = "Um site sobre academia e alimentação saudavel!"
+
+  }
+
+  function contato(){
+    resultadocontato.innerHTML = "(11) 990018923"
   }
 
 

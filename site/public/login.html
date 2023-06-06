@@ -57,11 +57,9 @@
         <ul class="bula">
             <li class="roda">Sobre nós</li>
             <button onclick="descriçao()" class="botãoroda">Descrição</button>
-            <div id="div_desc"></div>
+            <div id="resultadodesc"></div>
             <button onclick="contato()" class="botãoroda">Contato</button>
-            <div id="div_Contato"></div>
-
-
+            <div id="resultadocontato"></div>
         </ul>
 
         <ul class="bula">
@@ -155,6 +153,14 @@
     }
 
 
+    function descriçao(){
+    resultadodesc.innerHTML = "Um site sobre academia e alimentação saudavel!"
+
+  }
+
+  function contato(){
+    resultadocontato.innerHTML = "(11) 990018923"
+  }
 
 
 </script>

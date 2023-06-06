@@ -70,7 +70,7 @@
     <br>
     <div class="sorteio">
         <div class="sortear">
-            Vamos sortear um treino para voce fazer !
+            <h2>Vamos sortear um treino para voce fazer !</h2>
             <br>
             <br>
             <button onclick="sortear()" >Sortear treino </button>
@@ -95,10 +95,10 @@
 
     <ul class="bula">
         <li class="roda">Sobre nós</li>
-        <button onclick="descriçao()" class="botãoroda">Descrição</button>
-        <div id="div_desc"></div>
-        <button onclick="contato()" class="botãoroda">Contato</button>
-        <div id="div_Contato"></div>
+                <button onclick="descriçao()" class="botãoroda">Descrição</button>
+                <div id="resultadodesc"></div>
+                <button onclick="contato()" class="botãoroda">Contato</button>
+                <div id="resultadocontato"></div>
 
 
     </ul>
@@ -116,10 +116,10 @@
 
     <script>
         var lista = [
-        '<img style="height: 150px;" src=".//imagem/supino.jpg">',
-        '<img style="height: 150px;" src="./imagem/biceps2.jpg">',
-        '<img style="height: 150px;" src="./imagem/perna.jpg">',
-        '<img style="height: 150px;" src="./imagem/costas1.jpg">'
+        'Treino de peito! <br><img style="height: 150px;" src=".//imagem/supino.jpg">',
+        'Treino de braço! <br><img style="height: 150px;" src="./imagem/biceps2.jpg">',
+        'Treino de perna !<br><img style="height: 150px;" src="./imagem/perna.jpg">',
+        'Treino de costas!<br><img style="height: 150px;" src="./imagem/costas1.jpg">'
 
     ]
 
@@ -198,6 +198,14 @@
     }
 
 
+    function descriçao(){
+    resultadodesc.innerHTML = "Um site sobre academia e alimentação saudavel!"
+
+  }
+
+  function contato(){
+    resultadocontato.innerHTML = "(11) 990018923"
+  }
 
 
     </script>
