@@ -71,7 +71,8 @@ a {
 .card {
     background-color: #000000af;
     padding-left: 20px;
-    color : white
+    color : white;
+    border-radius: 20%;
 
 
 }
@@ -180,6 +181,16 @@ a {
 
 
 
+}
+#cbum{
+    height: 400px;
+    width: 500px;
+    border-radius: 20%;
+    margin-left: 400px;
+}
+.ins{
+    padding: 20px;
+    background-color: #0313f869;
 }
 
     
