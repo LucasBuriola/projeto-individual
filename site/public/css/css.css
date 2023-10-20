@@ -64,14 +64,14 @@ a {
     align-items: center;
     height: 90%;
     width: 90%;
-    color: white;
+    color: rgb(12, 8, 8);
 
 }
 
 .card {
-    background-color: #000000af;
+    
     padding-left: 20px;
-    color : white;
+    color : rgb(0, 0, 0);
     border-radius: 20%;
 
 
@@ -96,7 +96,7 @@ a {
 /* começo do social*/
 
 .social {
-    background-color: #000000;
+    background-color: #0313f869;
     border-bottom: #0313f8 solid 3px;
 }
 
@@ -122,7 +122,7 @@ a {
 }
 
 .card h4 {
-    color: #fffcfc;
+    color: #000000;
 
 }
 
@@ -192,5 +192,17 @@ a {
     padding: 20px;
     background-color: #0313f869;
 }
+
+#david{
+    height: 400px;
+    width: 400px;
+    border-radius: 20%;
+    margin-left: 400px;
+}
+
+#cbum1{
+    border-radius: 20%;
+}
+
 
     
