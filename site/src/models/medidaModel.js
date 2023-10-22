@@ -61,8 +61,31 @@ function buscarMedidasEmTempoReal(idAquario) {
     return database.executar(instrucaoSql);
 }
 
+function cadastrarMusculo(peito, perna, costas, biceps, triceps, antebraço, fkusuario) {
+    var instrucaoSql = `insert into musculo(peito,biceps,triceps,costas,antebraço,perna,fkusuario)
+    values (${peito},${biceps},${triceps},${costas},${antebraço},${perna},${fkusuario});
+    `; console.log("Executando a intrução Sql:\n" + instrucaoSql)
+    return database.executar(instrucaoSql)
+
+
+}
+function AtualizarMusculo(peito, perna, costas, biceps, triceps, antebraço, fkusuario) {
+    var instrucaoSql = `UPDATE musculo
+    SET peito =  ${peito},
+        biceps =  ${biceps},
+        triceps = ${triceps},
+        costas =  ${costas},
+        antebraço =  ${antebraço},
+        perna = ${perna}
+    WHERE fkusuario =  ${fkusuario};
+    `; console.log("Executando a intrução Sql:\n" + instrucaoSql)
+    return database.executar(instrucaoSql)
+
+}
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    cadastrarMusculo,
+    AtualizarMusculo
 }

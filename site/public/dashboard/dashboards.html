@@ -1,118 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
 </head>
+
 <body>
-    <div class="header">
-        <div class="container">
-            <h1 class="logo">Strength of motivation</h1>
-            <ul class="navBar">
-                <li><a href="../index.html" >Inicio</a></li>
-                <li><a href="../treino.html">Treino</a></li>
-                <li><a href="../alimentação.html">alimentação</a> </li>
-                <li><a href="../calculadora.html">Simulador</a></li>
-                <li>|</li>
-                <li> <a href="../login.html">Login </a></li>
-                <li> <a href="../cadastro.html">Cadastro </a></li>
-            </ul>
-        </div>
+  <div class="header">
+    <div class="container">
+      <h1 class="logo">Strength of motivation</h1>
+      <ul class="navBar">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../treino.html">Treino</a></li>
+        <li><a href="../alimentação.html">alimentação</a> </li>
+        <li><a href="../calculadora.html">Simulador</a></li>
+        <li>|</li>
+        <li> <a href="../login.html">Login </a></li>
+        <li> <a href="../cadastro.html">Cadastro </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="tela">
+    <div class="escolha">
+      <div class="selecione">
+        <br>
+        Qual musculo voce deseja focar nos primeiros 6 meses :<br> <br>
+
+        Biceps<input type="checkbox" id="input_biceps">
+        Perna<input type="checkbox" id="input_perna">
+        Peito<input type="checkbox" id="input_peito">
+        Triceps<input type="checkbox" id="input_triceps">
+        Ombro<input type="checkbox" id="input_ombro">
+        Antebraço<input type="checkbox" id="input_antebraco">
+        Costas<input type="checkbox" id="input_costas">
+        <br>
+        <br>
+        <button onclick="cadastrar()">
+          Cadastrar
+        </button>
+        <button onclick="mostrar()">Ver Grafico</button>
+        <button onclick="Refazer()">Refazer preferencia</button>
+        <button onclick="AtualizarMusculo()">Atualizar</button>
+
+
+      </div>
     </div>
 
+    <div class="cor">
+      <br>
+      <div class="grafico">
+        <canvas id="myChart"></canvas>
+      </div>
+      <br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-      <div class="tela" >
-        <div class="escolha" >
-          <div class="selecione" >
-            <br>
-            Qual musculo voce deseja focar nos primeiros 6 meses :<br> <br>
-            
-            Biceps<input type="checkbox" id="input_biceps">
-            Perna<input type="checkbox" id="input_perna">
-            Peito<input type="checkbox" id="input_peito">
-            Triceps<input type="checkbox" id="input_triceps">
-            Ombro<input type="checkbox" id="input_ombro">
-            Antebraço<input type="checkbox" id="input_antebraco">
-            Costas<input type="checkbox" id="input_costas">
-            <br>
-            <br>
-            <button onclick="cadastrar()">
-                Cadastrar
-            </button>
-            <button onclick="mostrar()" >Ver Grafico</button>
-    
-           
-            </div>
-        </div>
-        
-        <div class="cor" >
-          <br>
-        <div  class="grafico" >
-            <canvas id="myChart"></canvas>
-          </div>
-          <br>
-        </div>
-          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </div>
 
-         </div>
-         
-         </body>
-          <div class="rodaPé">
-
-            <h4></h4>
-            <ul class="bula">
-                <li><a href="index.html" class="roda">Home</a></li>
-                <li><a href="calculadora.html" class="roda">Simulador</a></li>
-                <li><a href="Cadastro.html" class="roda">Cadastro</a></li>
-                <li><a href="login.html" class="roda">Login</a></li>
-            </ul>
-    
-            <ul class="bula">
-                <li class="roda">Sobre nós</li>
-                <button onclick="descriçao()" class="botãoroda">Descrição</button>
-                <div id="resultadodesc"></div>
-                <button onclick="contato()" class="botãoroda">Contato</button>
-                <div id="resultadocontato"></div>
-    
-    
-            </ul>
-    
-            <ul class="bula">
-                <li class="roda">Redes Sociais</li>
-                <li><a href="" class="roda">Instagram</a></li>
-    
-            </ul>
-        </div>
-    
-
-    
 </body>
+<div class="rodaPé">
+
+  <h4></h4>
+  <ul class="bula">
+    <li><a href="index.html" class="roda">Home</a></li>
+    <li><a href="calculadora.html" class="roda">Simulador</a></li>
+    <li><a href="Cadastro.html" class="roda">Cadastro</a></li>
+    <li><a href="login.html" class="roda">Login</a></li>
+  </ul>
+
+  <ul class="bula">
+    <li class="roda">Sobre nós</li>
+    <button onclick="descriçao()" class="botãoroda">Descrição</button>
+    <div id="resultadodesc"></div>
+    <button onclick="contato()" class="botãoroda">Contato</button>
+    <div id="resultadocontato"></div>
+
+
+  </ul>
+
+  <ul class="bula">
+    <li class="roda">Redes Sociais</li>
+    <li><a href="" class="roda">Instagram</a></li>
+
+  </ul>
+</div>
+
+
+
+</body>
+
 </html>
 
 <script>
 
   var perna = 0
-  var biceps= 0
+  var biceps = 0
   var peito = 0
   var triceps = 0
-  var Ombro = 0 
+  var Ombro = 0
   var Antebraço = 0
   var costas = 0
+  var idusuario = sessionStorage.getItem('ID_USUARIO')
 
 
-  function mostrar(){
+  function mostrar() {
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: ['Perna', 'Bíceps', 'Peito', 'costas', 'triceps', 'Ombro','Antebraço'],
+        labels: ['Perna', 'Bíceps', 'Peito', 'costas', 'triceps', 'Antebraço'],
         datasets: [{
           label: 'Preferencia de Musculos',
-          data: [perna, biceps, peito, costas, triceps, Ombro, Antebraço ],
+          data: [perna, biceps, peito, costas, triceps, Antebraço],
           borderWidth: 1
         }]
       },
@@ -127,54 +133,117 @@
   }
 
   function cadastrar() {
-        alert(`
+    alert(`
         Voto Registrado
         `)
 
-        if (input_peito.checked == true) {
-            input_peito.checked = false;
-
-            peito++;
-        } else if (input_ombro.checked == true) {
-            input_ombro.checked = false;
-
-            ombro++;
-        } else if (input_triceps.checked == true) {
-            input_triceps.checked = false;
-
-            triceps++;
-        } else if (input_costas.checked == true) {
-            input_costas.checked = false;
-
-            costas++;
-        } else if (input_biceps.checked == true) {
-            input_biceps.checked = false;
-
-            biceps++;
-        } else if (input_perna.checked == true) {
-            input_perna.checked = false;
-
-            perna++;
-        } else if (input_antebraco.checked == true) {
-            input_antebraco.checked = false; 
-
-            Antebraço++;
-    } 
-    
-    function limpar(){
-      myChart.innerHTML = ``
+    if (input_peito.checked) {
+      input_peito.checked = false;
+      peito++;
     }
+    if (input_triceps.checked) {
+      input_triceps.checked = false;
+      triceps++;
+    }
+    if (input_costas.checked) {
+      input_costas.checked = false;
+      costas++;
+    }
+    if (input_biceps.checked) {
+      input_biceps.checked = false;
+      biceps++;
+    }
+    if (input_perna.checked) {
+      input_perna.checked = false;
+      perna++;
+    }
+    if (input_antebraco.checked) {
+      input_antebraco.checked = false;
+      Antebraço++;
+    }
+
+    fetch("/medidas/cadastrarMusculo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        antebraçoserver: Antebraço,
+        bicepsserver: biceps,
+        costasserver: costas,
+        pernaserver: perna,
+        peitoserver: peito,
+        tricepsserver: triceps,
+        idusuarioserver: idusuario
+
+      })
+    })
 
   }
 
-  function descriçao(){
+  function descriçao() {
     resultadodesc.innerHTML = "Um site sobre academia e alimentação saudavel!"
 
   }
 
-  function contato(){
+  function contato() {
     resultadocontato.innerHTML = "(11) 990018923"
   }
 
+  function Refazer() {
+    
 
-  </script>
+
+  }
+
+  function AtualizarMusculo() {
+    alert(`
+        Voto Registrado
+        `)
+
+    if (input_peito.checked) {
+      input_peito.checked = false;
+      peito++;
+    }
+    if (input_triceps.checked) {
+      input_triceps.checked = false;
+      triceps++;
+    }
+    if (input_costas.checked) {
+      input_costas.checked = false;
+      costas++;
+    }
+    if (input_biceps.checked) {
+      input_biceps.checked = false;
+      biceps++;
+    }
+    if (input_perna.checked) {
+      input_perna.checked = false;
+      perna++;
+    }
+    if (input_antebraco.checked) {
+      input_antebraco.checked = false;
+      antebraço++;
+    }
+    fetch("/medidas/AtualizarMusculo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        antebraçoserver: Antebraço,
+        bicepsserver: biceps,
+        costasserver: costas,
+        pernaserver: perna,
+        peitoserver: peito,
+        tricepsserver: triceps,
+        idusuarioserver: idusuario
+
+      })
+    })
+    
+
+  }
+
+
+</script>

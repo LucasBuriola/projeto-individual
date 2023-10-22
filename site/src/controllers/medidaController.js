@@ -39,10 +39,108 @@ function buscarMedidasEmTempoReal(req, res) {
         console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
+
+}
+function cadastrarMusculo(req, res) {
+    var costas = req.body.costasserver
+    var biceps = req.body.bicepsserver
+    var peito = req.body.peitoserver
+    var perna = req.body.pernaserver
+    var triceps = req.body.tricepsserver
+    var antebraço = req.body.antebraçoserver
+    var fkusuario = req.body.idusuarioserver
+
+    if (costas == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (biceps == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+
+    } else if (perna == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+
+    } else if (peito == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+
+    } else if (triceps == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+
+    } else if (antebraço == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+    }
+    else if (fkusuario == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+    }
+    else {
+        medidaModel.cadastrarMusculo(peito, perna, costas, biceps, triceps, antebraço,fkusuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro dos musculos! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function AtualizarMusculo(req, res) {
+    var costas = req.body.costasserver
+    var biceps = req.body.bicepsserver
+    var peito = req.body.peitoserver
+    var perna = req.body.pernaserver
+    var triceps = req.body.tricepsserver
+    var antebraço = req.body.antebraçoserver
+    var fkusuario = req.body.idusuarioserver
+
+    if (costas == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (biceps == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+
+    } else if (perna == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+
+    } else if (peito == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+
+    } else if (triceps == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+
+    } else if (antebraço == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+    }
+    else if (fkusuario == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+    }
+    else {
+        medidaModel.AtualizarMusculo(peito, perna, costas, biceps, triceps, antebraço,fkusuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar ao atualizar os musculos! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
 }
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    cadastrarMusculo,
+    AtualizarMusculo
 
 }
