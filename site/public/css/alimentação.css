@@ -38,12 +38,14 @@ body {
     color: #2612d8;
     list-style: none;
     justify-content: space-evenly;
+    
 
 }
 
 a {
     text-decoration: none;
     color: #0313f8;
+
 }
 
 .ganho{

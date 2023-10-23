@@ -18,5 +18,8 @@ router.post("/cadastrarMusculo", function (req, res) {
 router.post("/AtualizarMusculo", function (req, res) {
     medidaController.AtualizarMusculo(req, res);
 })
+router.get("/BuscarDados", function (req, res) {
+    medidaController.BuscarDados(req, res);
+})
 
 module.exports = router;

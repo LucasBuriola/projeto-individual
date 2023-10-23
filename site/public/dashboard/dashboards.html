@@ -36,7 +36,6 @@
         Perna<input type="checkbox" id="input_perna">
         Peito<input type="checkbox" id="input_peito">
         Triceps<input type="checkbox" id="input_triceps">
-        Ombro<input type="checkbox" id="input_ombro">
         Antebraço<input type="checkbox" id="input_antebraco">
         Costas<input type="checkbox" id="input_costas">
         <br>
@@ -46,7 +45,7 @@
         </button>
         <button onclick="mostrar()">Ver Grafico</button>
         <button onclick="Refazer()">Refazer preferencia</button>
-        <button onclick="AtualizarMusculo()">Atualizar</button>
+        <button onclick="Atualizar()">Atualizar</button>
 
 
       </div>
@@ -55,7 +54,7 @@
     <div class="cor">
       <br>
       <div class="grafico">
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart">Preferencia dos usuarios</canvas>
       </div>
       <br>
     </div>
@@ -103,13 +102,38 @@
   var biceps = 0
   var peito = 0
   var triceps = 0
-  var Ombro = 0
-  var Antebraço = 0
+  var antebraço = 0
   var costas = 0
   var idusuario = sessionStorage.getItem('ID_USUARIO')
 
 
   function mostrar() {
+    fetch("/medidas/BuscarDados", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+
+          peitoGrafico = `${resposta[0].total_peito}`
+          bicepsGrafico = `${resposta[0].total_biceps}`
+          tricepsGrafico = `${resposta[0].total_triceps}`
+          costasGrafico = `${resposta[0].total_costas}`
+          pernaGrafico = `${resposta[0].total_perna}`
+          antebraçoGrafico = `${resposta[0].total_antebraço}`
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados: ${error.message}`);
+      });
+      
+
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
@@ -118,7 +142,7 @@
         labels: ['Perna', 'Bíceps', 'Peito', 'costas', 'triceps', 'Antebraço'],
         datasets: [{
           label: 'Preferencia de Musculos',
-          data: [perna, biceps, peito, costas, triceps, Antebraço],
+          data: [perna, biceps, peito, costas, triceps, antebraço],
           borderWidth: 1
         }]
       },
@@ -159,7 +183,7 @@
     }
     if (input_antebraco.checked) {
       input_antebraco.checked = false;
-      Antebraço++;
+      antebraço++;
     }
 
     fetch("/medidas/cadastrarMusculo", {
@@ -190,11 +214,6 @@
     resultadocontato.innerHTML = "(11) 990018923"
   }
 
-  function Refazer() {
-    
-
-
-  }
 
   function AtualizarMusculo() {
     alert(`
@@ -241,6 +260,22 @@
 
       })
     })
+    function BuscarDados(req, res) {
+
+console.log(`Recuperando dados em tempo real`);
+
+medidaModel.BuscarDados().then(function (resultado) {
+    if (resultado.length > 0) {
+        res.status(200).json(resultado);
+    } else {
+        res.status(204).send("Nenhum resultado encontrado!")
+    }
+}).catch(function (erro) {
+    console.log(erro);
+    console.log("Houve um erro ao buscar os dados", erro.sqlMessage);
+    res.status(500).json(erro.sqlMessage);
+});
+}
     
 
   }
